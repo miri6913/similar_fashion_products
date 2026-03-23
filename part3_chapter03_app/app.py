@@ -42,7 +42,7 @@ class BranchClassifier(nn.Module):
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # 모델 생성
-model_save_dir = 'part3_chapter03_train_results'
+model_save_dir = '/content/drive/MyDrive/Colab Notebooks/fast_campus_image_processing/similar_fashion_products/train_results'
 num_branches = 4
 with open(os.path.join(model_save_dir, 'detail_category_list.json'), 'r')as json_f:
     detail_category_list = json.load(json_f)
