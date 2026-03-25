@@ -69,14 +69,9 @@ Send a POST request to `http://localhost:5000/predict` with an image file to get
 Here are some example outputs from the project:
 
 ### Vector Similarity Search Results
-![Similarity Search Example](images/similarity_search_example.png)
+![Similarity Search Example](images/similarity_search.png)
 
 *Example of similar fashion products found using vector search.*
-
-### Model Classification Output
-![Classification Example](images/classification_example.png)
-
-*Example classification results showing predicted categories.*
 
 ## API Endpoints
 
