@@ -47,7 +47,7 @@ class BranchClassifier(nn.Module):
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # 모델 생성
-model_save_dir = 'part3_chapter03_train_results'
+model_save_dir = '/content/drive/MyDrive/Colab Notebooks/fast_campus_image_processing/similar_fashion_products/train_results'
 num_branches = 4
 with open(os.path.join(model_save_dir, 'detail_category_list.json'), 'r')as json_f:
     detail_category_list = json.load(json_f)
@@ -75,13 +75,13 @@ transform = A.Compose([
 ])
 
 ## 인덱스 로드
-index_save_dir = 'part3_chapter03_index'
+index_save_dir = '/content/drive/MyDrive/Colab Notebooks/fast_campus_image_processing/similar_fashion_products/index'
 index = faiss.read_index(os.path.join(index_save_dir, 'ivf_index.index'))
 with open(os.path.join(index_save_dir, 'image_path_id_list.json') , 'r') as json_f:
     image_path_id_list = json.load(json_f)
 
 ## pca 로드
-vector_save_dir = 'part3_chapter03_vector'
+vector_save_dir = '/content/drive/MyDrive/Colab Notebooks/fast_campus_image_processing/similar_fashion_products/vectors'
 normalizer = Normalizer(norm='l2')
 pca_path = os.path.join(vector_save_dir, 'pca_model.pkl')
 with open(pca_path, 'rb') as f:
