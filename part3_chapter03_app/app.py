@@ -87,7 +87,7 @@ def predict_image(image_bytes):
     # 예측 결과를 확률로 변환
     probs = nn.functional.softmax(output[0], dim=0)
     preds = torch.argmax(probs).item()
-    
+
     feature = feature.detach().cpu().numpy().tolist()
 
     # 예측 결과 반환
@@ -100,11 +100,11 @@ def predict():
         # POST 요청으로 받은 이미지 데이터를 처리
         if 'file' not in request.files:
             return jsonify({'error': 'No file part'})
-        
+
         file = request.files['file']
         if file.filename == '':
             return jsonify({'error': 'No selected file'})
-        
+
         if file:
             image_bytes = file.read()
             preds, feature = predict_image(image_bytes)
